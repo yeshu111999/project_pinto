@@ -29,7 +29,63 @@
             <v-divider color="white" width="80%" style="margin:1% auto 2% auto;"></v-divider>
             <span :class="$mq=='desktop' ? 'cardTextStyleTwo' : 'cardTextStyleTwoBigger'">The ONLY Movement-powered, People-owned, Grassroots-driven Political Party. Don’t settle for MEDIOCRITY! Join Us Today</span>
         </div>
-        <div :class="$mq=='desktop' ? 'addMainContentDesktop' : ''">
+        <div v-if="$mq=='mobile'">
+            <v-divider color="black" width="20%" style="border:3px rgb(65, 48, 40) solid; margin:12% auto 8% auto"></v-divider>
+            <span class="cardTextStyleOneBigger">LATEST NEWS</span>
+            <v-carousel
+            hide-delimiters
+            :show-arrows="false"
+            cycle
+            :height="$mq == 'desktop' ? '80vh' : '70vh'"
+            interval="4000"
+            >
+                <v-carousel-item
+                v-for="(slide, i) in slides"
+                :key="i"
+                >
+                <div class="newsCard">
+                    <v-card>
+                        <div class="newsCardImage">
+                            <!-- <img src= "../assets/NewsImage1.jpg" /> -->
+                        </div>
+                        <div style="margin:8% 0%;">
+                            <span class="cardTextStyleOneBigger">
+                                Our party helps poor children to get educated and get basic needs along with education
+                            </span>
+                        </div>
+                        <v-divider></v-divider>
+                        <div>
+                            <v-btn class="readMoreButton">READ MORE</v-btn>
+                        </div>
+                    </v-card>
+                </div>
+                </v-carousel-item>
+            </v-carousel>
+        </div>
+        <div v-else>
+            <v-divider color="black" width="8%" style="border:3px rgb(65, 48, 40) solid; margin:4% auto 2% auto"></v-divider>
+            <span class="cardTextStyleOne">LATEST NEWS</span>
+            <div class="desktopNews">
+                <div v-for="(slide, i) in slides"
+                    :key="i" class="newsCard">
+                    <v-card>
+                        <div class="newsCardImage">
+                            <!-- <img src= "../assets/NewsImage1.jpg" /> -->
+                        </div>
+                        <div style="margin:8% 0%;">
+                            <span class="cardTextStyleOneBigger">
+                                Our party helps poor children to get educated and get basic needs along with education
+                            </span>
+                        </div>
+                        <v-divider></v-divider>
+                        <div>
+                            <v-btn class="readMoreButton">READ MORE</v-btn>
+                        </div>
+                    </v-card>
+                </div>
+            </div>
+        </div>
+        <!-- <div :class="$mq=='desktop' ? 'addMainContentDesktop' : ''">
             <div :style="{'width':$mq == 'desktop'? '25%' : ''}" v-for="(addImage, i) in addImages1" :key="i">
                 <div class="addBannerBackground" :style="{'background' : 'url('+ addImage.image+')'}">
                     <span class="addDiv">{{addImage.text}}</span>
@@ -49,7 +105,7 @@
                     <span class="addDiv">{{addImage.text}}</span>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div style="padding:5%;">
             <span class="connectWithUs">CONNECT WITH US</span>
@@ -131,7 +187,7 @@ export default {
 
 @media screen and (max-width: 767px) {
     .bannerBackground{
-        background:url('https://aacparty.org/wp-content/uploads/2018/08/Nigerian-Flag.png');
+        background:url('../assets/logo.jpeg');
         width:100%;
         height:30vh;
         background-size: cover;
@@ -150,7 +206,10 @@ export default {
     .mainDiv{
         margin-top : 16px; display: flex; justify-content: center; align-items: center;
     }
-
+    .readMoreButton{
+        width:100%;
+        box-shadow: none;
+    }
     .cardContent{
         font-family:Noto; 
         font-size: 0.4rem;
@@ -183,6 +242,18 @@ export default {
         font-family:Noto; font-size: 1.4rem;font-weight:400; letter-spacing: 0rem;
     }
 
+    .newsCard{
+        width:90%;
+        margin: 4% auto;
+    }
+    .newsCardImage{
+        background:url('../assets/NewsImage1.jpg');
+        height:30vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center center;
+    }
+
     .addDiv{
         display: flex;
         height: 30vh;
@@ -213,12 +284,33 @@ export default {
 
 @media screen and (min-width: 768px) {
     .bannerBackground{
-        background:url('https://aacparty.org/wp-content/uploads/2018/08/Nigerian-Flag.png');
+        background:url('../assets/logo.jpeg');
         width:100%;
         height:80vh;
         background-size: cover;
         background-repeat: no-repeat;
         background-position:center center;
+    }
+
+    .newsCard{
+        width:30%;
+        margin: 4% auto;
+    }
+    .newsCardImage{
+        background:url('../assets/NewsImage1.jpg');
+        height:30vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center center;
+    }
+
+    .readMoreButton{
+        width:100%;
+        box-shadow: none;
+    }
+
+    .cardTextStyleOneBigger{
+        font-family:Noto; font-size: 2rem;font-weight:400; letter-spacing: 0rem;
     }
 
     .addBannerBackground{
@@ -231,6 +323,13 @@ export default {
 
     .mainDiv{
         margin-top : 16px; display: flex; justify-content: center; align-items: center;
+    }
+
+    .desktopNews{
+        display: flex;
+        flex-direction: row;
+        width:70%;
+        margin: auto;
     }
 
     .cardContent{
