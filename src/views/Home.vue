@@ -5,7 +5,7 @@
             hide-delimiters
             :show-arrows="false"
             cycle
-            height="80vh"
+            :height="$mq == 'desktop' ? '80vh' : '30vh'"
             interval="4000"
             >
                 <v-carousel-item
@@ -21,9 +21,45 @@
                             </div>
                         </v-card>
                     </div>
-                </v-carousel-item>
-            </v-carousel>
+            </v-carousel-item>
+        </v-carousel>
         <div style="background-color:rgb(24, 167, 152); height:10vh; "></div>
+        <div style="background-color:rgb(65, 48, 40);color: #FFF;padding:2% 0%;">
+            <span :class="$mq=='desktop' ? 'cardTextStyleOne' : 'cardTextStyleOneBigger'">#OurOwnParty</span>
+            <v-divider color="white" width="80%" style="margin:1% auto 2% auto;"></v-divider>
+            <span :class="$mq=='desktop' ? 'cardTextStyleTwo' : 'cardTextStyleTwoBigger'">The ONLY Movement-powered, People-owned, Grassroots-driven Political Party. Don’t settle for MEDIOCRITY! Join Us Today</span>
+        </div>
+        <div :class="$mq=='desktop' ? 'addMainContentDesktop' : ''">
+            <div :style="{'width':$mq == 'desktop'? '25%' : ''}" v-for="(addImage, i) in addImages1" :key="i">
+                <div class="addBannerBackground" :style="{'background' : 'url('+ addImage.image+')'}">
+                    <span class="addDiv">{{addImage.text}}</span>
+                </div>
+            </div>
+        </div>
+        <div :class="$mq=='desktop' ? 'addMainContentDesktop' : ''">
+            <div :style="{'width':$mq == 'desktop'? '25%' : ''}" v-for="(addImage, i) in addImages2" :key="i">
+                <div class="addBannerBackground" :style="{'background' : 'url('+ addImage.image+')'}">
+                    <span class="addDiv">{{addImage.text}}</span>
+                </div>
+            </div>
+        </div>
+        <div :class="$mq=='desktop' ? 'addMainContentDesktop' : ''">
+            <div :style="{'width':$mq == 'desktop'? '25%' : ''}" v-for="(addImage, i) in addImages3" :key="i">
+                <div class="addBannerBackground" :style="{'background' : 'url('+ addImage.image+')'}">
+                    <span class="addDiv">{{addImage.text}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding:5%;">
+            <span class="connectWithUs">CONNECT WITH US</span>
+            <div class="connectionItemsAlignment">
+                <img :style="{'padding':$mq == 'mobile'? '4% 0%' : '0%'}" src="https://aacparty.com/wp-content/uploads/2015/07/twconnect.png" />
+                <img :style="{'padding':$mq == 'mobile'? '4% 0%' : '0%'}" src="https://aacparty.com/wp-content/uploads/2015/07/ytconnect.png" />
+                <img :style="{'padding':$mq == 'mobile'? '4% 0%' : '0%'}" src="https://aacparty.com/wp-content/uploads/2015/07/fbconnect.png" />
+                <img :style="{'padding':$mq == 'mobile'? '4% 0%' : '0%'}" src="https://aacparty.com/wp-content/uploads/2015/07/igconnect.png" />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -32,7 +68,61 @@ import TopBarVue from '../components/TopBar.vue';
 export default {
     components : {TopBarVue},
     data:()=>({
-        slides : 3
+        slides : 3,
+        addImages1 : [
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Security-600x450.jpg',
+                text : 'Security'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Power-600x450.jpg',
+                text : 'Power'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Infrastructure-600x450.jpg',
+                text : 'Infrastructure'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Corruption-600x450.jpg',
+                text : 'Corruption'
+            }
+        ],
+        addImages2 : [
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/ECO-600x450.jpg',
+                text : 'Economy and Job Growth'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Restructuring-600x450.jpg',
+                text : 'Restructuring'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Healthcare-600x450.jpg',
+                text : 'HealthCare'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Education-600x450.jpg',
+                text : 'Education'
+            }
+            ],
+        addImages3 : [
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/AGRIC-600x450.jpg',
+                text : 'Agriculture'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Tourism-600x450.jpg',
+                text : 'Tourism'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Infrastructure-600x450.jpg',
+                text : 'Infrastructure'
+            },
+            {
+                image : 'https://aacparty.org/wp-content/uploads/2018/08/Restructuring-600x450.jpg',
+                text : 'Restructuring'
+            }
+        ]
     })
 }
 </script>
@@ -42,6 +132,14 @@ export default {
 @media screen and (max-width: 767px) {
     .bannerBackground{
         background:url('https://aacparty.org/wp-content/uploads/2018/08/Nigerian-Flag.png');
+        width:100%;
+        height:30vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center center;
+    }
+
+    .addBannerBackground{
         width:100%;
         height:30vh;
         background-size: cover;
@@ -73,8 +171,43 @@ export default {
         font-family:Noto; font-size: 1.2rem;font-weight:400; letter-spacing: 0rem;
     }
 
+    .cardTextStyleOneBigger{
+        font-family:Noto; font-size: 2rem;font-weight:400; letter-spacing: 0rem;
+    }
+
     .cardTextStyleTwo{
         font-family:Noto; font-size: 0.7rem;font-weight:400; letter-spacing: 0rem;
+    }
+
+    .cardTextStyleTwoBigger{
+        font-family:Noto; font-size: 1.4rem;font-weight:400; letter-spacing: 0rem;
+    }
+
+    .addDiv{
+        display: flex;
+        height: 30vh;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: 8%;
+        color: #FFF;
+        font-family: Noto;
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+
+    .connectWithUs{
+        font-family:Noto; 
+        font-size: 24px;
+        font-weight:500; 
+        letter-spacing: 0rem;
+    }
+    .connectionItemsAlignment{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 5% auto;
     }
 }
 
@@ -83,6 +216,14 @@ export default {
         background:url('https://aacparty.org/wp-content/uploads/2018/08/Nigerian-Flag.png');
         width:100%;
         height:80vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center center;
+    }
+
+    .addBannerBackground{
+        width:100%;
+        height:30vh;
         background-size: cover;
         background-repeat: no-repeat;
         background-position:center center;
@@ -114,6 +255,38 @@ export default {
 
     .cardTextStyleTwo{
         font-family:Noto; font-size: 1.4rem;font-weight:400; letter-spacing: 0rem;
+    }
+
+    .connectWithUs{
+        font-family:Noto; 
+        font-size: 24px;
+        font-weight:500; 
+        letter-spacing: 0rem;
+    }
+    .connectionItemsAlignment{
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 5% auto;
+    }
+
+    .addDiv{
+        display: flex;
+        height: 30vh;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: 8%;
+        color: #FFF;
+        font-family: Noto;
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+
+    .addMainContentDesktop{
+        display: flex;
+        flex-direction: row;
     }
 }
 
