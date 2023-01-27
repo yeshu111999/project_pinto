@@ -71,37 +71,42 @@ export default {
     }),
     methods:{
         routeToRightMethod(route){
-            if(route=="Pawn Shops"){
+            if(route=="HOME"){
                 this.$router.push({
-                    name: 'Search'
+                    name: 'Home'
+                })
+            }
+            else if(route=="ACTUALITES"){
+                this.$router.push({
+                    name: 'Actualites'
                 })
             }
             else if (route=="Titlepal") {
                 window.open("https://titlepal.com/" , "_blank")
             }
-            else if (route=="Microlending") {
+            else if (route=="STRUCTURES") {
                 this.$router.push({
-                    name: 'Search'
+                    name: 'Actualites'
                 })
             }
-            else if (route=="Non-Fungible Tokens") {
+            else if (route=="ADHESION") {
                 this.$router.push({
-                    name: 'Search'
+                    name: 'Adhesion'
                 })
             }
-            else if (route=="Contact Us") {
+            else if (route=="MISSION") {
                 this.$router.push({
-                    name: 'ContactUs'
+                    name: 'Actualites'
                 })
             }
-            else if (route=="Investor Relations") {
+            else if (route=="PRIORITES") {
                 this.$router.push({
-                    name: 'InvestorRelations'
+                    name: 'Priorites'
                 })
             }
-            else if (route=="About Us") {
+            else if (route=="DONATION") {
                 this.$router.push({
-                    name: 'AboutUs'
+                    name: 'Donation'
                 })
             }
             else if (route=="Home") {

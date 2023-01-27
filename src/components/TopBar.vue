@@ -1,12 +1,13 @@
 <template>
-    <div>
+    <div style="background-color:blanchedalmond">
         <div v-if="$mq == 'desktop'" class="commonHeaderClass">
-            <Heading :heading-name="'HOME'" :items="homeItems"/>
-            <Heading :heading-name="'MANIFESTO'" :items="homeItems"/>
-            <Heading :heading-name="'BECOME A MEMBER'"/>
-            <Heading :heading-name="'TAKE ACTION!'" :items="homeItems"/>
-            <Heading :heading-name="'EVENTS'" :items="homeItems"/>
-            <Heading :heading-name="'CONTACT'" />
+            <Heading :heading-name="'HOME'" /> 
+            <Heading :heading-name="'ACTUALITES'" />
+            <Heading :heading-name="'STRUCTURES'" />
+            <Heading :heading-name="'ADHESION'"/>
+            <Heading :heading-name="'PRIORITES'" />
+            <Heading :heading-name="'MISSION'" />
+            <Heading :heading-name="'DONATION'" />
         </div>
         <div v-else>
             <Heading :heading-name="'More'" :items="allItems"/>
@@ -35,11 +36,12 @@ export default {
                 ],
                 allItems :[
                     { title: 'HOME'},
-                    { title: 'MANIFESTO' },
-                    { title: 'BECOME A MEMBER' },
-                    { title: 'TAKE ACTION!' },
-                    { title: 'EVENTS' },
-                    { title: 'CONTACT' }
+                    { title: 'ACTUALITES'},
+                    { title: 'STRUCTURES' },
+                    { title: 'ADHESION' },
+                    { title: 'PRIORITES' },
+                    { title: 'MISSION' },
+                    { title: 'DONATION' }
                 ]
             }
         },

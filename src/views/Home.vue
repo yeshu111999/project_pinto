@@ -1,28 +1,36 @@
 <template>
     <div>
         <TopBarVue />
-        <v-carousel
-            hide-delimiters
-            :show-arrows="false"
-            cycle
-            :height="$mq == 'desktop' ? '80vh' : '30vh'"
-            interval="4000"
-            >
-                <v-carousel-item
-                v-for="(slide, i) in slides"
-                :key="i"
+        <div style="display:flex; flex-direction : row;">
+            <v-carousel
+                hide-delimiters
+                :show-arrows="false"
+                cycle
+                :height="$mq == 'desktop' ? '80vh' : '30vh'"
+                interval="4000"
                 >
-                    <div class="bannerBackground mainDiv">
-                        <v-card class="cardContent" style="box-shadow: none;background-color: rgba(64, 50, 41, 0.9);color: #FFF;">
-                            <div class="cardTextContent">
-                                <span class="cardTextStyleOne">LET US BUILD </span>
-                                <span class="cardTextStyleOne">WHAT WE DREAM OF</span>
-                                <span class="cardTextStyleTwo">WITH A FUTURE THAT IS QUITABLE AND FAIR FOR ALL</span>
-                            </div>
-                        </v-card>
-                    </div>
-            </v-carousel-item>
-        </v-carousel>
+                    <v-carousel-item
+                    v-for="(slide, i) in imageSlides"
+                    :key="i"
+                    >
+                        <div class="mainPageScroll">
+                            <img style='height: 100%; width: 100%; object-fit: contain' :src="slide.image" />
+                        </div>
+                        <!-- <div class="bannerBackground mainDiv" :style="{'background' : 'url('+ slide.image+')'}"> -->
+                            <!-- <v-card class="cardContent" style="box-shadow: none;background-color: rgba(64, 50, 41, 0.9);color: #FFF;">
+                                <div class="cardTextContent">
+                                    <span class="cardTextStyleOne">LET US BUILD </span>
+                                    <span class="cardTextStyleOne">WHAT WE DREAM OF</span>
+                                    <span class="cardTextStyleTwo">WITH A FUTURE THAT IS QUITABLE AND FAIR FOR ALL</span>
+                                </div>
+                            </v-card> -->
+                        <!-- </div> -->
+                </v-carousel-item>
+            </v-carousel>
+            <div style="width:40%; height:80vh; display: flex; justify-content: center;align-items: center;">
+                <img style='height: 100%; width: 100%; object-fit: contain' src="https://i.postimg.cc/8cTCMZD9/logoCrop.jpg" />
+            </div>
+        </div>
         <div style="background-color:rgb(24, 167, 152); height:10vh; "></div>
         <div style="background-color:rgb(65, 48, 40);color: #FFF;padding:2% 0%;">
             <span :class="$mq=='desktop' ? 'cardTextStyleOne' : 'cardTextStyleOneBigger'">#OurOwnParty</span>
@@ -85,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <!-- <div :class="$mq=='desktop' ? 'addMainContentDesktop' : ''">
+        <div :class="$mq=='desktop' ? 'addMainContentDesktop' : ''">
             <div :style="{'width':$mq == 'desktop'? '25%' : ''}" v-for="(addImage, i) in addImages1" :key="i">
                 <div class="addBannerBackground" :style="{'background' : 'url('+ addImage.image+')'}">
                     <span class="addDiv">{{addImage.text}}</span>
@@ -105,7 +113,7 @@
                     <span class="addDiv">{{addImage.text}}</span>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <div style="padding:5%;">
             <span class="connectWithUs">CONNECT WITH US</span>
@@ -125,6 +133,12 @@ export default {
     components : {TopBarVue},
     data:()=>({
         slides : 3,
+        imageSlides : [
+            { image : 'https://i.postimg.cc/bJyJ26qM/DSC00061.jpg' },
+            { image : 'https://i.postimg.cc/1ghbw7qd/DSC00102.jpg' },
+            { image : 'https://i.postimg.cc/R0n8L9ZJ/DSC00121.jpg' },
+            { image : 'https://i.postimg.cc/ZKV1TVQn/usa-gud-meeting.jpg' },
+        ],
         addImages1 : [
             {
                 image : 'https://aacparty.org/wp-content/uploads/2018/08/Security-600x450.jpg',
@@ -187,7 +201,7 @@ export default {
 
 @media screen and (max-width: 767px) {
     .bannerBackground{
-        background:url('../assets/logo.jpeg');
+        background:url('../assets/NewsImage1.jpg');
         width:100%;
         height:30vh;
         background-size: cover;
@@ -292,6 +306,10 @@ export default {
         background-position:center center;
     }
 
+    .mainPageScroll{
+        width:80%;
+        height:80vh;
+    }
     .newsCard{
         width:30%;
         margin: 4% auto;
