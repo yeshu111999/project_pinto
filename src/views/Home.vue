@@ -72,7 +72,7 @@
         </div>
         <div v-else>
             <v-divider color="black" width="8%" style="border:3px rgb(65, 48, 40) solid; margin:4% auto 2% auto"></v-divider>
-            <span class="cardTextStyleOne">LATEST NEWS</span>
+            <span class="cardTextStyleOne">DERNIERES ACTUALITES</span>
             <div class="desktopNews">
                 <div v-for="(slide, i) in slides"
                     :key="i" class="newsCard">
@@ -116,7 +116,7 @@
         </div>
 
         <div style="padding:5%;">
-            <span class="connectWithUs">CONNECT WITH US</span>
+            <span class="connectWithUs">NOUS JOINDRE</span>
             <div class="connectionItemsAlignment">
                 <img :style="{'padding':$mq == 'mobile'? '4% 0%' : '0%'}" src="https://aacparty.com/wp-content/uploads/2015/07/twconnect.png" />
                 <img :style="{'padding':$mq == 'mobile'? '4% 0%' : '0%'}" src="https://aacparty.com/wp-content/uploads/2015/07/ytconnect.png" />
