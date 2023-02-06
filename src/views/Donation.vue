@@ -104,9 +104,9 @@
             <div style="display: flex; flex-direction : row;justify-content: space-between; align-items: center; width: 50%;padding: 1%;">
                 <v-checkbox v-model="checkbox" hide-details>
                     <template v-slot:label>
-                        <div style="color:black; font-weight:bold">
+                        <v-btn style="color:black; font-weight:bold; box-shadow: none; background-color: lightcoral;">
                         ENVOYEZ
-                        </div>
+                        </v-btn>
                     </template>
                 </v-checkbox>
             </div>
