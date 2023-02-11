@@ -47,7 +47,7 @@
             </div>
             <div style="display: flex; flex-direction : row;justify-content: space-between; align-items: center; width: 50%;padding: 1%;">
                 <div>
-                    <span>ADDRESSE</span>
+                    <span>ADRESSE</span>
                 </div>
                 <div>
                     <v-text-field
