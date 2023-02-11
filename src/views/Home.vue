@@ -134,6 +134,7 @@ export default {
     data:()=>({
         slides : 3,
         imageSlides : [
+            { image : 'https://i.postimg.cc/Zn6Qd6FH/main-Photo.jpg'},
             { image : 'https://i.postimg.cc/bJyJ26qM/DSC00061.jpg' },
             { image : 'https://i.postimg.cc/1ghbw7qd/DSC00102.jpg' },
             { image : 'https://i.postimg.cc/R0n8L9ZJ/DSC00121.jpg' },
