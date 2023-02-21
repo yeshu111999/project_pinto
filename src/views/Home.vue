@@ -27,7 +27,7 @@
                         <!-- </div> -->
                 </v-carousel-item>
             </v-carousel>
-            <div style="width:40%; height:80vh; display: flex; justify-content: center;align-items: center;">
+            <div class="logoImageClass">
                 <img style='height: 100%; width: 100%; object-fit: contain' src="https://i.postimg.cc/8cTCMZD9/logoCrop.jpg" />
             </div>
         </div>
@@ -36,6 +36,18 @@
             <span :class="$mq=='desktop' ? 'cardTextStyleOne' : 'cardTextStyleOneBigger'">#OurOwnParty</span>
             <v-divider color="white" width="80%" style="margin:1% auto 2% auto;"></v-divider>
             <span :class="$mq=='desktop' ? 'cardTextStyleTwo' : 'cardTextStyleTwoBigger'">The ONLY Movement-powered, People-owned, Grassroots-driven Political Party. Don’t settle for MEDIOCRITY! Join Us Today</span>
+        </div>
+        <div class="middleDiv">
+            <div class="middleDivInner">
+                <img style='height: 100%; width: 100%; object-fit: contain' src="https://i.postimg.cc/Zn6Qd6FH/main-Photo.jpg" />
+            </div>
+            <div class="middleDivInner" style="padding:5%; display: flex;align-items: center; justify-content: center;">
+                <div style="display: flex;flex-direction: column;">
+                    <span style="font-weight: 600;font-size: 2rem;">#OurOwnParty</span>
+                    <span style="font-weight: 500;font-size: 1.2rem;">The ONLY Movement-powered, People-owned, Grassroots-driven Political Party. Don’t settle for MEDIOCRITY! Join Us Today</span>
+                    <span style="font-weight: 500;font-size: 1.2rem;">The ONLY Movement-powered, People-owned, Grassroots-driven Political Party. Don’t settle for MEDIOCRITY! Join Us Today</span>
+                </div>
+            </div>
         </div>
         <div v-if="$mq=='mobile'">
             <v-divider color="black" width="20%" style="border:3px rgb(65, 48, 40) solid; margin:12% auto 8% auto"></v-divider>
@@ -124,6 +136,15 @@
                 <img :style="{'padding':$mq == 'mobile'? '4% 0%' : '0%'}" src="https://aacparty.com/wp-content/uploads/2015/07/igconnect.png" />
             </div>
         </div>
+        <div style="background-color:rgb(65, 48, 40);color: #FFF;padding:2% 0%;">
+            <span :class="$mq=='desktop' ? 'cardTextStyleOne' : 'cardTextStyleOneBigger'">My Information</span>
+            <v-divider color="white" width="80%" style="margin:1% auto 2% auto;"></v-divider>
+            <div style="display: flex;flex-direction: column;">
+                <span :class="$mq=='desktop' ? 'cardTextStyleTwo' : 'cardTextStyleTwoBigger'"><b>Name:</b> SEKOU BENNA CAMARA</span>
+                <span :class="$mq=='desktop' ? 'cardTextStyleTwo' : 'cardTextStyleTwoBigger'"><b>Adress:</b> 2520 batchelder #1, brooklyn NY 11235</span>
+                <span :class="$mq=='desktop' ? 'cardTextStyleTwo' : 'cardTextStyleTwoBigger'"><b>Telephone:</b> 1347-720-9046</span>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -134,7 +155,7 @@ export default {
     data:()=>({
         slides : 3,
         imageSlides : [
-            { image : 'https://i.postimg.cc/Zn6Qd6FH/main-Photo.jpg'},
+            // { image : 'https://i.postimg.cc/Zn6Qd6FH/main-Photo.jpg'},
             { image : 'https://i.postimg.cc/bJyJ26qM/DSC00061.jpg' },
             { image : 'https://i.postimg.cc/1ghbw7qd/DSC00102.jpg' },
             { image : 'https://i.postimg.cc/R0n8L9ZJ/DSC00121.jpg' },
@@ -217,7 +238,12 @@ export default {
         background-repeat: no-repeat;
         background-position:center center;
     }
-
+    .middleDiv{
+        width:100%; display: flex;flex-direction: column;
+    }
+    .middleDivInner{
+        width:100%
+    }
     .mainDiv{
         margin-top : 16px; display: flex; justify-content: center; align-items: center;
     }
@@ -232,7 +258,9 @@ export default {
         letter-spacing: 0rem;
         width: 80%;
     }
-
+    .logoImageClass{
+        width:40%; height:18vh; display: flex; justify-content: center;align-items: center;
+    }
     .cardTextContent{
         display: flex; 
         flex-direction : column;
@@ -322,12 +350,19 @@ export default {
         background-repeat: no-repeat;
         background-position:center center;
     }
-
+    .middleDiv{
+        width:100%; display: flex;flex-direction: row;
+    }
+    .middleDivInner{
+        width:50%;
+    }
     .readMoreButton{
         width:100%;
         box-shadow: none;
     }
-
+    .logoImageClass{
+        width:40%; height:80vh; display: flex; justify-content: center;align-items: center;
+    }
     .cardTextStyleOneBigger{
         font-family:Noto; font-size: 2rem;font-weight:400; letter-spacing: 0rem;
     }

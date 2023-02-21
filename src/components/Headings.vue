@@ -86,7 +86,7 @@ export default {
             }
             else if (route=="STRUCTURES") {
                 this.$router.push({
-                    name: 'Actualites'
+                    name: 'Structures'
                 })
             }
             else if (route=="ADHESION") {
