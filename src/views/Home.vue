@@ -14,7 +14,7 @@
                     :key="i"
                     >
                         <div class="mainPageScroll">
-                            <img style='height: 100%; width: 100%; object-fit: contain' :src="slide.image" />
+                            <img style='height: 100%; width: 100%; object-fit: contain' src="../assets/DSC00061.jpg" />
                         </div>
                         <!-- <div class="bannerBackground mainDiv" :style="{'background' : 'url('+ slide.image+')'}"> -->
                             <!-- <v-card class="cardContent" style="box-shadow: none;background-color: rgba(64, 50, 41, 0.9);color: #FFF;">
