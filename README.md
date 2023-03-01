@@ -1,4 +1,4 @@
-# demoproject
+# Gud
 
 ## Project setup
 ```
